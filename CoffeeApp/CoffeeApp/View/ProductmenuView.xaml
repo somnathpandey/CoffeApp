@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoffeeApp.View.ProductmenuView" >
+    <MasterDetailPage.Master >
+        <ContentPage Title="Home">
+            <ContentPage.Content>
+                <StackLayout>
+                    <Label Text="This is master" TextColor="Green" 
+                           FontSize="Default" HorizontalOptions="Center" FontAttributes="Bold"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button Text="Carlist" TextColor="Blue" FontSize="Default" BackgroundColor="Black"
+                        Command="{Binding Carcommand}" 
+                                HorizontalOptions="Center" 
+                                Grid.Row="0" Grid.Column="0"/>
+                        <Button Text="Datalist" TextColor="Pink" 
+                                FontSize="Default" BackgroundColor="Black"
+                          Command="{Binding Gcommand}"
+                                HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" />
+                    
+                            <Image Source="About.png" Grid.Row="1" 
+                                   Grid.Column="0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Aboutimage}">
+
+                                    </TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Grid.Row="1" Grid.Column="1" Text="Home" FontAttributes="Bold" TextColor="PaleGreen"/>
+
+                        <Label Text="Go to product" Grid.Row="2" 
+                               Grid.Column="0" FontAttributes="Bold" >
+                            <Label.GestureRecognizers >
+                                <TapGestureRecognizer Command="{Binding Bout}">
+                                    
+                                </TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label Text="Go to Grid" Grid.Row="3" Grid.Column="0"
+                               FontAttributes="Bold" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Mybout}">
+                                    
+                                </TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content>
+                <StackLayout>
+                    <Image Source="Menuicon.png" HorizontalOptions="Start">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Image.GestureRecognizers>
+                        
+                    </Image>  
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

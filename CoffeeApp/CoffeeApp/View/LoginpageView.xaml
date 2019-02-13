@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoffeeApp.View.LoginpageView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="SBI" TextColor="Blue" FontSize="Default" HorizontalOptions="Center">
+            </Label>
+            <Entry Placeholder="enterUId" TextColor="Black" FontSize="Default"
+                   HorizontalOptions="StartAndExpand" Text="{Binding UserId}" ></Entry>
+            <Entry Placeholder="enterpassword" TextColor="Black" FontSize="Default" 
+                   HorizontalOptions="StartAndExpand" Text="{Binding Password}" 
+                   IsPassword="True"/>
+            <Label Text="Discripation" TextColor="GreenYellow" FontSize="Default"></Label>
+            <BoxView HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" ></BoxView>
+            <Button Text="Submit" TextColor="Pink" FontSize="Default" 
+                    HorizontalOptions="Center" Command="{Binding loginbutton}"></Button>
+                    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
